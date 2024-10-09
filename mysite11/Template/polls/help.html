@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FORM</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      body {
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+        background: #191825;
+        display: flex;
+        flex-direction: column;
+      }
+      .inputfield {
+        position: relative;
+        height: 80px;
+      }
+      .inputfield input {
+        width: 350px;
+        height: 60px;
+        border-radius: 6px;
+        font-size: 18px;
+        padding: 0 15px;
+        border: 2px solid #fff;
+        background: transparent;
+        outline: none;
+        color: #fff;
+        font-family: cursive;
+      }
+      .inputfield label {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        color: white;
+        font-size: 19px;
+        pointer-events: none;
+        transition: 0.3s;
+      }
+      input:focus {
+        border: 2px solid #1cd679;
+      }
+      input:focus ~ label,
+      input:valid ~ label {
+        top: 0;
+        font-size: 16px;
+        padding: 0, 10px;
+        background: #191825;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="simpleform">
+      <form action="" method="post">
+        {% csrf_token %}
+        <div class="inputfield">
+          <input type="text" id="Fullname" name="Name" required />
+          <label for="Fullname">Enter your Name</label>
+        </div>
+        <div class="inputfield">
+          <input type="email" id="Email" name="Email" required />
+          <label for="Email">Enter your Email</label>
+        </div>
+        <div class="inputfield">
+          <input type="number" id="mobile" name="mobile" required />
+          <label for="mobile">Enter your Mobile</label>
+        </div>
+        <div class="inputfield"><input type="submit" value="Submit" /></div>
+      </form>
+    </div>
+  </body>
+</html>
